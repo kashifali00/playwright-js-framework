@@ -1,0 +1,21 @@
+{
+  "name": "playwright-js-framework",
+  "version": "1.0.0",
+  "description": "``` npm",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashifali00/playwright-js-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashifali00/playwright-js-framework/issues"
+  },
+  "homepage": "https://github.com/kashifali00/playwright-js-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.27.1"
+  }
+}
