@@ -1,5 +1,5 @@
 import type { PlaywrightTestConfig } from '@playwright/test';
-import { devices } from '@playwright/test';
+
 
 const config: PlaywrightTestConfig = {
   testDir: './tests',
@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
       name: "e2e",
       use:{
         browserName : 'chromium',
-        headless: true,
+        headless: false,
         screenshot : 'only-on-failure',
         trace: 'retain-on-failure',
         baseURL:"https://sec.penguinin.com:9090",

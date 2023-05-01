@@ -2,9 +2,9 @@ import {test,Page} from "@playwright/test"
 
 export class UiUtils {
 
-    async uploadFile(page:Page){
+    async uploadFile(page:Page, path:string){
 
-        await page.setInputFiles("input[type='file']", "testdata/FloorPlan.jpg")
+        await page.setInputFiles("input[type='file']", path)
 
     }
 

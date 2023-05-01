@@ -14,6 +14,10 @@ export class FloorsPage {
     floorDelete:Locator
     deleteFloorYesButton:Locator
     floorValidationText:Locator
+    uploadInvalidText:Locator
+    cancelButton:Locator
+    errorNameAlreadyExist:Locator
+    errorFloorAlreadyExist:Locator
     
     constructor(page:Page){
 
@@ -29,7 +33,29 @@ export class FloorsPage {
         this.floorDelete = page.locator("div.FloorCard__tools")
         this.deleteFloorYesButton = page.getByRole('button', { name: 'Yes' })
         this.floorValidationText = page.locator("section.FloorCard__infoSection")
+        this.uploadInvalidText = page.locator(".ValidationText.ValidationText--danger")
+        this.cancelButton = page.getByRole('button', { name: 'cancel' })
+        this.errorNameAlreadyExist = page.getByText("This name already exists")
+        this.errorFloorAlreadyExist = page.getByText("This level already exists")
+       
       
+    }
+
+    getErrorFloorAlreadyExist(){
+        return this.errorFloorAlreadyExist
+    }
+    
+
+    getErrorNameAlreadyExist(){
+        return this.errorNameAlreadyExist
+    }
+
+    getCancelButton(){
+        return this.cancelButton
+    }
+
+    getUploadInvalidErrorText(){
+        return this.uploadInvalidText
     }
 
     getFloorValidationText(){
