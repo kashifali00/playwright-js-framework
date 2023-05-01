@@ -1,7 +1,6 @@
 pipeline {
-    agent {
-        docker { image 'node:18.16.0-alpine' }
-    }
+    agent any
+    tools {nodejs "nodejs"}
     stages {
         stage('Fetch'){
             steps{
