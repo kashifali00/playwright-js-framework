@@ -10,10 +10,7 @@ jobs:
     runs-on: window-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-      - name: Install dependencies
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+      - uses: actions/setup-node@v3 
       - name: Run Playwright tests
         run:  npm run test
       - uses: actions/upload-artifact@v3
