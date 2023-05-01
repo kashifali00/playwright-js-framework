@@ -95,6 +95,7 @@ test.describe("Login scenarios", () => {
 ## Continuous Integration
 - Docker
 - Github Actions
+[CI Github Actions](https://playwright.dev/docs/ci-intro)
 
 Suggested configuration
 
