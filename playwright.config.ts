@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
     timeout: 5000
   },
 
-  reporter: '',
+  reporter: 'html',
 
 
   projects: [
