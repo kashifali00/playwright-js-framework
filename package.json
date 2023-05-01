@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "``` npm",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "pretest1": "npm install && npm install -D @playwright/test",
+    "test": "npx playwright test --project=e2e"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kashifali00/playwright-js-framework.git"
@@ -16,6 +19,9 @@
   },
   "homepage": "https://github.com/kashifali00/playwright-js-framework#readme",
   "devDependencies": {
-    "@playwright/test": "^1.27.1"
+    "@playwright/test": "^1.33.0"
+  },
+  "dependencies": {
+    "playwright": "^1.33.0"
   }
 }

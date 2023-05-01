@@ -10,16 +10,21 @@ const config: PlaywrightTestConfig = {
     timeout: 5000
   },
 
-  reporter: 'html',
+  reporter: '',
+
 
   projects: [
     {
-      name: "chromiumbrowser",
+      name: "e2e",
       use:{
         browserName : 'chromium',
         headless: false,
         screenshot : 'only-on-failure',
-        trace: 'retain-on-failure'
+        trace: 'retain-on-failure',
+        baseURL:"https://sec.penguinin.com:9090",
+        launchOptions: {
+          slowMo:50
+        }
 
       }
     },
