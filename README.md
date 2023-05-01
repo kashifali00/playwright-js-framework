@@ -33,6 +33,7 @@ cool! we all set to work either running the existing tests or developing new one
 ## Running Tests
 
 To run tests, run the following command
+Note: Tests will be running in headless mode for better performance or to avoid any unforseen issues while running in docker container
 
 ```bash
   npm run test
