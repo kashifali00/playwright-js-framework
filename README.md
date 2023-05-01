@@ -94,6 +94,7 @@ test.describe("Login scenarios", () => {
 
 ## Continuous Integration
 - Docker
+- Github Actions
 
 Suggested configuration
 
