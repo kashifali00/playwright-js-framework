@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
       name: "e2e",
       use:{
         browserName : 'chromium',
-        headless: false,
+        headless: true,
         screenshot : 'only-on-failure',
         trace: 'retain-on-failure',
         baseURL:"https://sec.penguinin.com:9090",
