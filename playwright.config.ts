@@ -10,7 +10,12 @@ const config: PlaywrightTestConfig = {
     timeout: 5000
   },
 
-  reporter: 'html',
+  reporter: [
+    ['html', {open:'never'}],
+    ['list'],
+    ['junit', { outputFile: 'results.xml' }],
+    ['json', {  outputFile: 'test-results.json' }]
+  ],
 
 
   projects: [

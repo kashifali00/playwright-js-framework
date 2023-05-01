@@ -4,7 +4,7 @@
   "description": "``` npm",
   "main": "index.js",
   "scripts": {
-    "pretest1": "npm install && npm install -D @playwright/test",
+    "pretest": "npm install && npm install -D @playwright/test",
     "test": "npx playwright test --project=e2e"
   },
   "repository": {

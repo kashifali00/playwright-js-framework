@@ -32,7 +32,7 @@ test.describe("Facility -> Floor Plan ", () => {
     })
 
 
-    test.only("Verify that user is able to add floor plan from JPG image", async() => {
+    test("Verify that user is able to add floor plan from JPG image", async() => {
         page.goto('/QA1')
         await pageObjectManager.getLoginPage().getEmailField().waitFor({state:'visible', timeout:20000})
         await pageObjectManager.getLoginPage().getEmailField().fill(JSON.parse(JSON.stringify(data.VALID_USER)))

@@ -96,6 +96,44 @@ test.describe("Login scenarios", () => {
 - Docker
 - Github Actions
 [CI Github Actions](https://playwright.dev/docs/ci-intro)
+-Jenkins
+
+For the demo purpose, I'm going with Jenkins pipeline with Nodejs 
+
+```JenkinsFile
+pipeline {
+    agent any
+    tools {nodejs "nodejs"}
+    stages {
+        stage('Fetch'){
+            steps{
+                git branch: 'main', credentialsId: '2dc2d8bf-0442-4adf-aaac-2f04e35c10f2', url: 'https://github.com/kashifali00/playwright-js-framework.git'
+        }
+            }
+            
+        stage('Test'){
+            steps{
+                bat 'npm run test'
+            }
+        }
+
+        stage('Report'){
+            steps{
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: "index.html",
+                    reportName: "e2e",
+                    reportTitles: "e2e"
+                    ])
+            }
+        }
+    }
+}
+
+```
 
 Suggested configuration
 

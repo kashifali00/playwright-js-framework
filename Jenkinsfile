@@ -8,18 +8,23 @@ pipeline {
         }
             }
             
-
-        stage('Build') {
-            steps {
-                bat 'npm install'
-                bat 'npx playwright install'
-            }
-
-        }
-
         stage('Test'){
             steps{
                 bat 'npm run test'
+            }
+        }
+
+        stage('Report'){
+            steps{
+                publishHTML([
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true,
+                    reportDir: 'playwright-report',
+                    reportFiles: "index.html",
+                    reportName: "e2e",
+                    reportTitles: "e2e"
+                    ])
             }
         }
     }
