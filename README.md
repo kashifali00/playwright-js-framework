@@ -1,14 +1,87 @@
-# playwright-js-framework
 
-## Pre-tools
+# Playwright Automation Framework with Page Oject Model
 
-1. Nodejs
-2. NPM
+Any browser • Any platform • One API
+Cross-browser. Playwright automation framework supports all modern rendering engines including Chromium, WebKit, and Firefox.
 
-## IDE
+Cross-platform. Test on Windows, Linux, and macOS, locally or on CI, headless or headed.
 
-VSCODE
+Cross-language. Use the Playwright API in TypeScript, JavaScript, Python, .NET, Java but we will be using TypeScript as binding language here
+    
+## Documentation
 
-## Initial setup 
+[Playwright Documentation](https://playwright.dev/docs/intro)
 
-``` npm init playwright ```
+
+
+## Tools require to work with framework
+- Install Nodejs
+    `v16.17.0`
+- Install npm
+    `6.14.17`
+
+## Install framework dependencies
+
+After cloning the repository, navigate to project folder where package.json resides
+and run the folllowing command from command
+
+`npm install`
+
+cool! we all set to work either running the existing tests or developing new ones
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```
+
+
+## Writing new UI test
+
+```typescript
+Before writing new test we have to develop respective page object under Pages directory then instantiate that page into POManager class
+
+
+```
+
+## Tech Stack
+**Playwright Automation Framework:** Node, Typescript
+
+
+## Continuous Integration
+- Docker
+
+Suggested configuration
+
+Using --ipc=host is also recommended when using Chromium—without it Chromium can run out of memory and crash. Learn more about this option in Docker docs.
+Seeing other weird errors when launching Chromium? Try running your container with docker run --cap-add=SYS_ADMIN when developing locally.
+Using --init Docker flag or dumb-init is recommended to avoid special treatment for processes with PID=1. This is a common reason for zombie processes.
+
+- Jenkins
+Jenkins supports Docker agents for pipelines.
+
+pipeline {
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.28.0-focal' } }
+   stages {
+      stage('e2e-tests') {
+         steps {
+            // Depends on your language / test framework
+            sh 'npm install'
+            sh 'npx playwright test'
+         }
+      }
+   }
+}
+## Authors
+
+- [@KashifAli](https://ka091480@bitbucket.org/fm_ebiz/poc-testing-playwright.git)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
