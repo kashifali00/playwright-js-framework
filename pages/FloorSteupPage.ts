@@ -6,6 +6,8 @@ export class FloorSteupPage {
     scaleFactor:Locator
     saveButton:Locator
     cancelButton:Locator
+    normalNode:Locator
+    nodeConnector:Locator
     
     constructor(page:Page){
 
@@ -13,7 +15,17 @@ export class FloorSteupPage {
         this.scaleFactor = page.locator("input[value='0']")
         this.saveButton = page.getByRole('button', { name: 'Save' })
         this.cancelButton = page.getByText("Cancel")
+        this.normalNode = page.locator('#Ellipse_353')
+        this.nodeConnector = page.locator('section').filter({ hasText: /^Add Path EdgesEdge$/ }).getByRole('img')
     
+    }
+
+    getNodeConnector(){
+        return this.nodeConnector
+    }
+
+    getNormalNodeCheckbox(){
+        return this.normalNode
     }
 
     getSaveButton(){

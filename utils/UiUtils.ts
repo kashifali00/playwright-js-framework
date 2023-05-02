@@ -20,5 +20,10 @@ export class UiUtils {
         return "SND"
     }
 
+    async clickXYCoordinate(page:Page, x:number, y:number){
+        await page.mouse.click(x,y)
+        await page.waitForTimeout(1000)
+    }
+
 
 }

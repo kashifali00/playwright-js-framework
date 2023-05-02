@@ -53,7 +53,7 @@ test.describe("Facility -> Floor Plan ", () => {
     })
 
 
-    test("Verify that user is able to add floor plan from JPG image", async() => {
+    test.only("Verify that user is able to add floor plan from JPG image", async() => {
 
         
         await pageObjectManager.getFacilityPage().getFloorLink().waitFor({state:'visible', timeout:9000})
@@ -83,7 +83,24 @@ test.describe("Facility -> Floor Plan ", () => {
         await pageObjectManager.getFloorSetupPage().getRuler().click()
         await pageObjectManager.getFloorSetupPage().getScaleFactor().fill("1")
         await pageObjectManager.getFloorSetupPage().getSaveButton().click()
-       
+        await pageObjectManager.getFloorSetupPage().getNormalNodeCheckbox().waitFor({state:'visible', timeout:9000})
+        await pageObjectManager.getFloorSetupPage().getNormalNodeCheckbox().click()
+        await uiUtils.clickXYCoordinate(page, 1156,446)
+        await uiUtils.clickXYCoordinate(page, 979,469)
+        await uiUtils.clickXYCoordinate(page, 972,295)
+        await uiUtils.clickXYCoordinate(page, 935,565)
+        await uiUtils.clickXYCoordinate(page, 509,457)
+        await pageObjectManager.getFloorSetupPage().getNodeConnector().click()
+        await uiUtils.clickXYCoordinate(page, 1156,466)
+        await uiUtils.clickXYCoordinate(page, 979,469)
+        await uiUtils.clickXYCoordinate(page, 979,469)
+        await uiUtils.clickXYCoordinate(page, 972,295)
+        await uiUtils.clickXYCoordinate(page, 972,295)
+        await uiUtils.clickXYCoordinate(page, 935,565)
+        await uiUtils.clickXYCoordinate(page, 935,565)
+        await uiUtils.clickXYCoordinate(page, 509,457)
+        await pageObjectManager.getFloorSetupPage().getSaveButton().click()
+           
     })
 
     test("Verify that user is able to add floor plan from PNG image", async() => {
